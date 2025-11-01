@@ -1,0 +1,42 @@
+[
+    {
+      "nombre_comun": "Paloma doméstica",
+      "imagen_url": "/img/PalomaDomestica.jpg",
+      "nombre_cientifico": "Columba livia",
+      "orden":"Columbiformes",
+      "descripcion": "Suelen encontrarse en parejas en la época de reproducción, pero el resto del tiempo son gregarias. Las palomas duermen en los salientes de los acantilados, muros y demás estructuras elevadas, pero nunca en las ramas de los árboles, en las que no pueden mantenerse agarradas.",
+      "estado_conservacion": "Domesticada"
+    },
+    {
+      "nombre_comun": "Caminera colipinta",
+      "imagen_url":"/img/CamineraColipinta.jpeg",
+      "nombre_cientifico": "Leptotila verreauxi",
+      "orden":"Columbiformes",
+      "descripcion": "También denominada paloma montaraz común, paloma titibú, paloma turca, paloma rabiblanca o yerutí común es una especie de ave columbiforme de la familia de las palomas (Columbidae). Es una de las palomas de gran tamaño del Nuevo Mundo. Habita desde el centro de Argentina y Paraguay, el occidente de Perú y Ecuador, hasta el sur de América Central; también es común en México y el sur de Tejas. Se encuentra en islas del Cono Norte de América del Sur, incluyendo Trinidad y Tobago y las Antillas Neerlandesas.",
+      "estado_conservacion":"Preocupación menor"
+    },
+    {
+      "nombre_comun": "Torcaza morada",
+      "imagen_url": "/img/TorcazaMorada.jpg",
+      "nombre_cientifico": "Patagioenas cayennensis",
+      "orden":"Columbiformes",
+      "descripcion": "Mide entre 30-32 cm de largo y pesa normalmente entre 230-250 g. Los machos adultos tienen la cabeza, el pecho y las partes superiores de color morado rojizo, con irisaciones verdosas en la nuca y la garganta blanquecina.de color morado pálido. Sus partes inferiores son de color gris claro y la parte baja de su espalda y la cola son de color gris oscuro. Su pico es negro y sus patas, iris y anillo ocular son rojos. Las hembras son similares aunque de tonos más apagados que los machos, y los inmaduros son principalmente de color pardo grisáceo.",
+      "estado_conservacion": "Preocupación menor"
+    },
+    {
+      "nombre_comun": "Pigua",
+      "imagen_url": "/img/Pigua.jpg",
+      "nombre_cientifico": "Milvago chimachima",
+      "orden":"Falconiformes",
+      "descripcion":"Conocida también como caracara o chimachimá es un ave propia de América Central y del Sur. Las hembras son más grandes y pesadas entre 310 y 360 gramos, los machos entre 280 y 330 gramos. Posee un plumaje color amarillo castaño claro y las alas castaño obscuro. Es sedentaria aunque se desplaza estacionalmente; habita en zonas donde la vejetación no es muy alta, como pastizales dedicados a la ganadería y campos dedicados a la agricultura. Se alimenta de carroña, pequeños vertebrados artrópodos, frutas y vegetales.",
+      "estado_conservacion":"Preocupación menor"
+    },
+    {
+      "nombre_comun": "Golero",
+      "imagen_url": "/img/Golero.jpg",
+      "nombre_cientifico": "Cogragyps atratus",
+      "orden":"Cathartiformes",
+      "descripcion":"Adaptada a entornos urbanos el buitre negro americano, zopilote, chulo o gallinazo es un ave de color negro que mide aproximadamente 74cm de longitud con una envergadura de 167cm. Es una especie muy sociable ensencialmente carroñera pero se puede alimentar de frutas y desperdicios humanos. Se dice también que puede matar pequeños mamiferos u otros animales recien nacidos.",
+      "estado_conservacion":"Preocupación menor"
+    }
+  ]

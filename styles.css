@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Inter|Caveat|Indie+Flower');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html,
+body {
+  min-width: 100%;
+  min-height: 100dvh;
+  background-color: #f3eded; /*rgb(214, 235, 245)*/
+}
+h3 {
+  margin: 10px;
+}
+/* -----------------HEADER-------------------- */
+header {
+  position: relative;
+  width: 100%;
+  min-height: 10vh;
+  background:linear-gradient(to top, transparent, #E9F1FA, #00ABE4) ; /*linear-gradient(to top, transparent, #b6f79c, #ffffff)*/
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: sans-serif;
+  color: #003344;
+  padding: 10px 20px;
+  border-bottom: solid #c5f0ee;
+}
+
+header h1 {
+  position: relative;
+  z-index: 2;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3.5em;
+  text-shadow: rgb(150, 150, 150) 3px 3px 5px;
+  margin: 0;
+ 
+}
+
+/* Animación de aves */
+.bird-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bird {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  animation: flyAcross 8s linear infinite;
+}
+
+.bird::before,
+.bird::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 6px;
+  background: #333;
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+.bird::before {
+  transform: rotate(45deg);
+  left: 0;
+  top: 0;
+}
+
+.bird::after {
+  transform: rotate(-45deg);
+  right: 0;
+  top: 0;
+}
+
+.delay1 {
+  animation-delay: 2s;
+  top: 40%;
+}
+.delay2 {
+  animation-delay: 4s;
+  top: 60%;
+}
+
+header p {
+  padding: 0 10px;
+  font-family: Caveat, "Indie Flower", "Brush Script MT", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.6rem;
+  text-align: justify;
+  font-weight: 1000;
+}
+
+/* Animación clave */
+@keyframes flyAcross {
+  0% {
+    left: 110%;
+    bottom: 10%;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    bottom: 60%;
+  }
+  100% {
+    left: -10%;
+    bottom: 40%;
+    transform: scale(0.9) rotate(-10deg);
+  }
+}
+
+/* 🌐 Responsivo */
+@media screen and (max-width: 1000px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    min-height: 10vh;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    padding: 10px 0;
+  }
+
+  .bird {
+    width: 16px;
+    height: 16px;
+  }
+
+  .bird::before,
+  .bird::after {
+    width: 10px;
+    height: 5px;
+  }
+}
+
+/*--------------------------------MAIN--------------------------------*/
+main {
+  display: flex;
+  flex-wrap: wrap;/*justify-content: space-around;*/
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+form {
+  width: 300px;
+  margin: 20px auto;
+  align-items: center;
+}
+form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+}
+button {
+  width: 100px;
+  margin: 10px;
+  border: 1px solid #003344;
+  border-radius: 30px;
+  font: 300 1em "Fira Sans", sans-serif;
+  cursor: pointer;
+}
+.buscador {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre input y botón */
+  flex-wrap: nowrap; /*Opcional para diseño responsivo */
+}
+
+.btn-input-ave {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sugerencias {
+  /*
+left: 0;
+background-color: whitesmoke;
+border: 1px solid #ccc;
+z-index: 10;
+ */
+  position: absolute;
+  top: calc(100% + 5px);
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  z-index: 999;
+  border: 0 solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+
+.ordenes {
+  width: 20%;
+  position: relative;
+  padding-top: 100px;
+  z-index: 0;
+  order: 1;
+  
+}
+.ordenes h2 {
+  position: relative;
+  text-decoration: underline;
+  padding-bottom: 30px;
+}
+.listado-ordenes {
+  position: relative;
+  height: fit-content;
+  background-color: #f3eded;
+  border-top: 0.3rem solid rgb(100, 104, 103);
+  border-left: 0.3rem solid rgb(100, 104, 103);
+}
+.listado-ordenes li {
+  font-family: "Henny Penny", cursive;
+  color: blueviolet;
+  padding-left: 0.2rem;
+  padding-top: 0.2rem;
+  list-style-position: inside;
+  list-style-image: url("/img/icon.png");
+}
+.listado-ordenes::before {
+  content: "";
+  background: radial-gradient(black 33%, transparent 33%);
+  background-size: 3px 3px;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -1;
+}
+.tarjeta {
+  width: 60%;
+  position: relative;
+  z-index: 0;
+  order: 2;
+}
+.tarjeta-ave {
+  display: flex;
+  position: relative;
+  height: fit-content;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  max-width: 400px;
+  border-radius: 4px;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid black;
+}
+.tarjeta-ave::before {
+  content: "";
+  background: radial-gradient(black 33%, transparent 33%);
+  background-size: 3px 3px;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -1;
+}
+
+.tarjeta-ave i {
+  font-family: "Henny Penny", cursive;
+  color: #555;
+  margin: 5px;
+}
+.contenedor-img-ave img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.descripcion {
+  font-family: "Henny Penny", cursive;
+  text-align: justify;
+  font-style: italic;
+  margin: 5px;
+}
+
+.estado-conserv {
+  padding-bottom: 5px;
+}
+/* Fin estilos de la sección tarjeta*/
+
+/* Estilos de la sección notas*/
+.sect-notas {
+  position: relative;
+  padding-bottom: 10px;
+  z-index: 0;
+  order: 3;
+}
+ 
+.sect-notas h2 {
+  padding-bottom: 5px;
+}
+.notas {
+  position: relative;
+  padding-top: 100px;
+}
+.espacio-notas {
+  position: relative;
+  height: fit-content;
+ /* width: 600px; */
+  height: 730px;
+  background-color: #003344;
+  background-image: url("/img/ctgmetro.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.espacio-notas::before {
+  content: "";
+  background: radial-gradient(black 33%, transparent 33%);
+  background-size: 3px 3px;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -1;
+}
+/* Fin estilos de la sección notas*/
+
+/* footer*/
+footer {
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  bottom: 0;
+  background: linear-gradient(to top, transparent,  #00ABE4, #E9F1FA) ;
+}
+ footer p{
+  text-align: justify;
+  padding-bottom: 5px;
+  font-family: "Henny Penny", cursive;
+ }
+.anio {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-style: oblique;
+  color: #3d0670;
+  padding-top: 5px;
+}
+/* Fin footer*/
+
+/* media quieries */
+@media screen and (max-width: 1500px) {
+  main {
+    float: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ordenes {
+    order: 2;
+  }
+  .tarjeta {
+    order: 1;
+  }
+  .sect-notas {
+    order: 3;
+  }
+}
+/* Fin media queries*/
