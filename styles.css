@@ -158,7 +158,7 @@ button {
 }
 .listado-ordenes li {
   font-family: "Henny Penny", cursive;
-  list-style-image: url("/img/icon.png");
+  list-style-image: url("../img/icon.png");
 }
 .tarjeta {
   width: 60%;
