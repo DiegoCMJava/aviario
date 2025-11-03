@@ -8,7 +8,7 @@
     <meta name="keywords" content="Observación, aves, biología, ecoturismo, Cartagena, Colombia">
     <meta name="description" content="Sítio web que permite la busqueda de aves que suelen aparecer en la ciudad de Cartagena-Colobia">
     <title>Aviario Cartagenero</title>
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="icon" href="./img/icon.png">
@@ -21,51 +21,49 @@
       </div>
     </header>
     <main class="w3-row">
-      <section class="ordenes">
+      <section class="w3-half orders-section">
         <h2>Lista de órdenes</h2>
-        <ul class="w3-ul w3-card-4  listado-ordenes" id="listado-ordenes" style="width: 50%; margin-left: 30px;">
+        <ul class="w3-ul w3-card-4 " id="listado-ordenes" style="width: 40%; margin-left: 30px;">
         </ul>
       </section>
-      <section class="tarjeta">
+      <section class="w3-half bird-section">
     <form action="" onsubmit="">
       <h2>¿Qué ave quieres buscar?</h2>
-      <div class="buscador">
+      <div class="">
       <input type="text" name="ave" id="input-ave" autocomplete="off" />
-      <ul class="sugerencias" id="sugerencias"></ul>
+      <ul class="" id="sugerencias"></ul>
       <button id="btn-input-ave" onclick="">Buscar</button>
     </div>
-    
     </form>
-    <article class="tarjeta-ave">
-      <div class="parte-1-tarj">
+    <article class="w3-card-4 card-bird">
+      <div class="">
         <h3>Nombre común</h3>
-      <i class="nombre-comun" id="nombre-comun"></i>
+      <i class="" id="nombre-comun"></i>
         <h3>Nombre científico</h3>
-        <i class="nombre-cientifico" id="nombre-cientifico">
+        <i class="" id="nombre-cientifico">
             Lorem, ipsum dolor sit
         </i>
         <h3>Orden</h3>
-        <i class="orden" id="orden">
+        <i class="" id="orden">
           Lorem, ipsum dolor sit
         </i>
        
         <h3>Estado de conservación</h3>
-        <i class="estado-conserv" id="estado-conserv">
+        <i class="" id="estado-conserv">
             Lorem, ipsum dolor sit
         </i>
       </div>
-      
-        <div class="parte-2-tarj">
-        <figure class="contenedor-img-ave" id="contenedor-img-ave">
+        <div class="">
+        <figure class="" id="contenedor-img-ave">
           <img
             src="./img/icon.png"
             alt="Imagen del ave"
-            class="img-ave"
+            class=""
             id="img-ave"
           />
         </figure>
         <h3>Descripción</h3>
-        <p class="descripcion" id="descripcion">
+        <p class="" id="descripcion">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
           fuga harum expedita atque laboriosam minima eligendi deleniti in sed
           perferendis. Ut hic atque dicta odio error tempore modi alias
@@ -74,10 +72,10 @@
       </div>
     </article>
   </section>
-  <section class="sect-notas">
-    <article class="notas" id="notas">
+  <section class="notes-section">
+    <article class="" id="notas">
       <h2>Notas sobre observación de aves</h2>
-      <p class="espacio-notas" id="espacio-notas"></p>
+      <p class="" id="espacio-notas"></p>
     </article>
   </section>
   </main>
@@ -88,7 +86,7 @@
       mostrada solo debe tenerse como aproximada y sujeta a errores. Es
       recomendable revisar fuentes que cuenten con acreditación académica.
     </p>
-    <p id="anio" class="anio"></p>
+    <p id="anio" class=""></p>
     </footer>
   </body>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
