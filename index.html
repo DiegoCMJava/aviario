@@ -13,30 +13,30 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="icon" href="./img/icon.png">
   </head>
-  <body class="w3-content" style="max-width: 1480px;">
-    <header class="w3-container  w3-light-blue">
+  <body class="w3-content w3-mobile" style="max-width: 1480px;">
+    <header class="w3-container w3-mobile w3-light-blue" >
       <h1>Aviario Cartagenero</h1>
       <div>
-        <p>Bienvenidos a este espacio personal con el que se pretende  axplorar aves  que habitan y/o transitan por la ciudad de Cartagena de Indias y sus áreas circundantes</p>
+        <p>Bienvenidos a este espacio  con el que se pretende  axplorar aves  que habitan y/o transitan por la ciudad de Cartagena de Indias y sus áreas circundantes</p>
       </div>
     </header>
     <main class="w3-row">
       <section class="w3-half orders-section">
         <h2>Lista de órdenes</h2>
-        <ul class="w3-ul w3-card-4 " id="listado-ordenes" style="width: 40%; margin-left: 30px;">
+        <ul class="w3-ul w3-card-4 " id="listado-ordenes" style="width: 50%; margin-left: 30px;">
         </ul>
       </section>
       <section class="w3-half bird-section">
-    <form action="" onsubmit="">
+    <form action="" onsubmit="" class="w3-container w3-light-grey">
       <h2>¿Qué ave quieres buscar?</h2>
       <div class="">
-      <input type="text" name="ave" id="input-ave" autocomplete="off" />
+      <input type="text" name="ave" id="input-ave" autocomplete="off" class="w3-input w3-border" style="width: 60%;" placeholder="Escribe aquí el nombre del ave"/>
       <ul class="" id="sugerencias"></ul>
-      <button id="btn-input-ave" onclick="">Buscar</button>
+      <button class="w3-button w3-khaki" id="btn-input-ave" onclick="">Buscar</button>
     </div>
     </form>
-    <article class="w3-card-4 card-bird">
-      <div class="">
+    <article class="w3-row w3-card-4 w3-container " >
+      <div class="w3-container w3-half w3-khaki">
         <h3>Nombre común</h3>
       <i class="" id="nombre-comun"></i>
         <h3>Nombre científico</h3>
@@ -53,12 +53,12 @@
             Lorem, ipsum dolor sit
         </i>
       </div>
-        <div class="">
+        <div class="w3-container w3-half">
         <figure class="" id="contenedor-img-ave">
           <img
             src="./img/icon.png"
             alt="Imagen del ave"
-            class=""
+            class="w3-image"
             id="img-ave"
           />
         </figure>
@@ -72,10 +72,10 @@
       </div>
     </article>
   </section>
-  <section class="notes-section">
-    <article class="" id="notas">
+  <section class="w3-panel w3-half w3-border w3-light-grey w3-bottombar notes-section">
+    <article class="" id="notes">
       <h2>Notas sobre observación de aves</h2>
-      <p class="" id="espacio-notas"></p>
+      <p class="" id="space-notes"></p>
     </article>
   </section>
   </main>

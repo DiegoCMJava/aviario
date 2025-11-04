@@ -2,20 +2,37 @@
 *{
   font-family: "Trebuchet MS", Tahoma, sans-serif !important;
 }
+
+.orders-section {
+  margin-top: 100px;
+}
 .orders-section li{
   list-style-position: inside;
   list-style-image: url("/img/icon.png");
 }
+.orders-section h2 {
+  width: 60%;
+  text-align: center;
+}
+.bird-section {
+  margin-top: 50px;
+}
+.bird-section form {
+  margin-bottom: 30px;
+}
+
 @media (max-width: 780px){
   main {
     display: flex !important;
     flex-direction: column;
+    align-items: center;
   }
   .bird-section{
     order: 1;
   }
   .orders-section{
     order: 2;
+    margin-bottom: 60px;
   }
   .notes-section{
     order: 3;
