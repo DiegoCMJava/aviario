@@ -8,26 +8,26 @@
     <meta name="keywords" content="Observación, aves, biología, ecoturismo, Cartagena, Colombia">
     <meta name="description" content="Sítio web que permite la busqueda de aves que suelen aparecer en la ciudad de Cartagena-Colobia">
     <title>Aviario Cartagenero</title>
-  <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="icon" href="./img/icon.png">
   </head>
-  <body class="w3-content w3-mobile" style="max-width: 1480px;">
-    <header class="w3-container w3-mobile w3-light-blue" >
+  <body class="w3-container">
+    <header class="w3-container w3-mobile w3-light-blue w3-center w3-padding-16" >
       <h1>Aviario Cartagenero</h1>
-      <div>
+      <div class="w3-container w3-center">
         <p>Bienvenidos a este espacio  con el que se pretende  axplorar aves  que habitan y/o transitan por la ciudad de Cartagena de Indias y sus áreas circundantes</p>
       </div>
     </header>
-    <main class="w3-row">
-      <section class="w3-half orders-section">
+    <main class=" w3-container w3-mobile w3-row ">
+      <section class=" w3-container w3-mobile w3-half orders-section">
         <h2>Lista de órdenes</h2>
-        <ul class="w3-ul w3-card-4 " id="listado-ordenes" style="width: 50%; margin-left: 30px;">
+        <ul class="w3-mobile w3-ul w3-card-4 " id="listado-ordenes" style="width: 50%; margin-left: 2px;">
         </ul>
       </section>
       <section class="w3-half bird-section">
-    <form action="" onsubmit="" class="w3-container w3-light-grey">
+    <form action="" onsubmit="" class=" w3-light-grey">
       <h2>¿Qué ave quieres buscar?</h2>
       <div class="">
       <input type="text" name="ave" id="input-ave" autocomplete="off" class="w3-input w3-border" style="width: 60%;" placeholder="Escribe aquí el nombre del ave"/>
@@ -35,7 +35,7 @@
       <button class="w3-button w3-khaki" id="btn-input-ave" onclick="">Buscar</button>
     </div>
     </form>
-    <article class="w3-row w3-card-4 w3-container " >
+    <article class="w3-mobile  w3-row w3-card-4 " >
       <div class="w3-container w3-half w3-khaki">
         <h3>Nombre común</h3>
       <i class="" id="nombre-comun"></i>
@@ -53,7 +53,7 @@
             Lorem, ipsum dolor sit
         </i>
       </div>
-        <div class="w3-container w3-half">
+        <div class="w3-container w3-mobile w3-half">
         <figure class="" id="contenedor-img-ave">
           <img
             src="./img/icon.png"
@@ -72,15 +72,15 @@
       </div>
     </article>
   </section>
-  <section class="w3-panel w3-half w3-border w3-light-grey w3-bottombar notes-section">
-    <article class="" id="notes">
+  <section class="w3-panel w3-mobile w3-half w3-border w3-light-grey w3-bottombar notes-section">
+    <article class="w3-mobile" id="notes">
       <h2>Notas sobre observación de aves</h2>
       <p class="" id="space-notes"></p>
     </article>
   </section>
   </main>
 
-    <footer class="w3-container  w3-light-blue">
+    <footer class="w3-container w3-mobile w3-display-bottom w3-light-blue">
      <p> Este proyecto es un listado de aves observadas en la ciudad de Cartagena
       de Indias. Pero no es un trabajo profesional, por ello la información aquí
       mostrada solo debe tenerse como aproximada y sujeta a errores. Es
