@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Inter|Caveat|Indie+Flower');
-*{
+html{
   box-sizing: border-box;
-  font-family: "Trebuchet MS", Tahoma, sans-serif !important;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+}
+*::after,
+::before {
+  box-sizing: inherit;
+}
+header {
+ background-color: rgba(31, 65, 19, 0.5);
+ font-family: Caveat, "Trebuchet MS", Tahoma, sans-serif;
+ color: white;
+ margin: 20px;
+ padding: 20px;
+}
+header p{
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-weight: 1000; 
 }
 
+/* CLASES */
 .orders-section {
   margin-top: 100px;
 }
@@ -21,10 +37,16 @@
 .bird-section form {
   margin-bottom: 30px;
 }
+/* FIN CLASES */
 
-@media (max-width: 780px){
+/* MEDIA QUERIES */
+@media only screen and (min-width: 600px){}
+@media only screen and (max-width: 600px){
+  header {
+    margin: 0;
+  }
   main {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     align-items: center ;
   }
@@ -39,3 +61,6 @@
     order: 3;
   }
 }
+@media only screen and (max-width: 992px){}
+@media only screen and (max-width: 1200px){}
+/* FIN MEDIA QUERIES */
