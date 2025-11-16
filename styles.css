@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Inter|Caveat|Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Inter|Caveat|Indie+Flower|Permanent+Marker');
 html{
   box-sizing: border-box;
   font-family: "Trebuchet MS", Tahoma, sans-serif;
@@ -10,26 +10,43 @@ html{
 header {
  background-color: rgba(31, 65, 19, 0.5);
  font-family: Caveat, "Trebuchet MS", Tahoma, sans-serif;
- color: white;
+ color: #212121;
  margin: 20px;
  padding: 20px;
 }
 header p{
-  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  margin-bottom: 10PX;
+  font-family: "Indie Flower", "Trebuchet MS", Tahoma, sans-serif;
+  font-size: 1.5em;
   font-weight: 1000; 
 }
-
+main {
+  font-family: 'Permanent Marker';
+  display: grid;
+  grid-template-columns: auto auto;
+}
 /* CLASES */
 .orders-section {
-  margin-top: 100px;
+  margin-top: 50px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(31, 65, 19, 0.5);
+  margin: 20px;
+  padding: 15px;
+  position: relative;
+}
+.orders-section ul {
+  padding-left: 5px;
 }
 .orders-section li{
   list-style-position: inside;
   list-style-image: url("/img/icon.png");
 }
 .orders-section h2 {
-  width: 60%;
-  text-align: center;
+  width: 70%;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 .bird-section {
   margin-top: 50px;
@@ -40,8 +57,16 @@ header p{
 /* FIN CLASES */
 
 /* MEDIA QUERIES */
-@media only screen and (min-width: 600px){}
+@media only screen and (min-width: 600px){
+  html {
+    background-color: #FAFAFA;
+  }
+  
+}
 @media only screen and (max-width: 600px){
+  html {
+    background-color: #F5F5F5;
+  }
   header {
     margin: 0;
   }
@@ -57,10 +82,26 @@ header p{
     order: 2;
     margin-bottom: 60px;
   }
+  .orders-section h2{
+    font-size: 1em;
+  } 
   .notes-section{
     order: 3;
   }
 }
-@media only screen and (max-width: 992px){}
-@media only screen and (max-width: 1200px){}
+@media only screen and (min-width: 768px){
+  html {
+    background-color: #EEEEEE;
+  }
+}
+@media only screen and (min-width: 992px){
+  html {
+    background-color: #E0E0E0;
+  }
+}
+@media only screen and (min-width: 1200px){
+  html {
+    background-color: #BDBDBD;
+  }
+}
 /* FIN MEDIA QUERIES */
