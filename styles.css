@@ -2,6 +2,7 @@
 html{
   box-sizing: border-box;
   font-family: "Trebuchet MS", Tahoma, sans-serif;
+  background-color: aliceblue;
 }
 *::after,
 ::before {
@@ -27,13 +28,27 @@ main {
 }
 /* CLASES */
 .orders-section {
-  margin-top: 50px;
-  border: 2px dashed #ccc;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(31, 65, 19, 0.5);
-  margin: 20px;
-  padding: 15px;
   position: relative;
+  height: fit-content;
+  max-width: 300px;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: #FFF;
+  border: 1px solid black;
+}
+.orders-section::before {
+  content: '';
+  background: radial-gradient(rgba(31, 65, 19, 0.5) 50%, transparent 33%) ;
+  background-size: 3px 3px;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 10px;
+  top: 10;
+  z-index: -1;
 }
 .orders-section ul {
   padding-left: 5px;
@@ -44,7 +59,7 @@ main {
 }
 .orders-section h2 {
   width: 70%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px dashed rgba(31, 65, 19, 0.5);
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -59,14 +74,12 @@ main {
 /* MEDIA QUERIES */
 @media only screen and (min-width: 600px){
   html {
-    background-color: #FAFAFA;
+    
   }
   
 }
 @media only screen and (max-width: 600px){
-  html {
-    background-color: #F5F5F5;
-  }
+ 
   header {
     margin: 0;
   }
@@ -80,6 +93,7 @@ main {
   }
   .orders-section{
     order: 2;
+    margin-top: 20px !important;
     margin-bottom: 60px;
   }
   .orders-section h2{
@@ -91,17 +105,16 @@ main {
 }
 @media only screen and (min-width: 768px){
   html {
-    background-color: #EEEEEE;
   }
+  
+}
+@media only screen and (max-width: 768px){
+  
 }
 @media only screen and (min-width: 992px){
   html {
-    background-color: #E0E0E0;
   }
 }
 @media only screen and (min-width: 1200px){
-  html {
-    background-color: #BDBDBD;
-  }
 }
 /* FIN MEDIA QUERIES */
