@@ -39,7 +39,7 @@ input.addEventListener("input", () => {
 });
 
 
-document.getElementById("btn-input-ave").addEventListener("click", function (e) {
+document.getElementById("sbm-input-ave").addEventListener("click", function (e) {
   e.preventDefault();
   const busqueda = document.getElementById("input-ave").value.toLowerCase();
 
