@@ -21,26 +21,33 @@
       </div>
     </header>
     <main class="">
+      <section class="row">
       <section class="orders-section">
         <h2>Lista de órdenes</h2>
         <ul class="" id="listado-ordenes">
         </ul>
       </section>
       <section class="bird-section">
-    <form action="https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviario-cartagenero/main/aves.json" onsubmit="" class="">
+    <form for="search-form" action="https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviario-cartagenero/main/aves.json" onsubmit="" class="">
       <h2>¿Qué ave quieres buscar?</h2>
-      <input type="text" name="ave" id="input-ave" autocomplete="off" class="" placeholder="Escribe aquí el nombre del ave"/><br>
+      <input type="search" name="search-form" id="input-ave" autocomplete="off" class="" placeholder="Escribe aquí el nombre del ave"/><br>
       <span><ul class="" id="sugerencias"></ul></span>
       <input type="submit" value="Buscar" class="" id="sbm-input-ave" ></input>
     </form>
     <article class="" >
-      <div class="">
-        <h3>Nombre común</h3>
-      <i class="" id="nombre-comun"></i>
-        <h3>Nombre científico</h3>
-        <i class="" id="nombre-cientifico">
-            Lorem, ipsum dolor sit
-        </i>
+      <div class="art-heading">
+      <i class="" id="nombre-comun" title="Nombre común">Nombre común</i>
+      <figure class="" id="contenedor-img-ave">
+        <img
+          src="./img/icon.png"
+          alt="Imagen del ave"
+          class=""
+          id="img-ave"
+        />
+      </figure>
+        <i class="" id="nombre-cientifico" title="Nombre científico">Nombre científico</i>
+      </div>
+      <div class="art-main">
         <h3>Orden</h3>
         <i class="" id="orden">
           Lorem, ipsum dolor sit
@@ -50,16 +57,11 @@
         <i class="" id="estado-conserv">
             Lorem, ipsum dolor sit
         </i>
+      
       </div>
-        <div class="">
-        <figure class="" id="contenedor-img-ave">
-          <img
-            src="./img/icon.png"
-            alt="Imagen del ave"
-            class=""
-            id="img-ave"
-          />
-        </figure>
+        
+        <div class="art-footer">
+        
         <h3>Descripción</h3>
         <p class="" id="descripcion">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
@@ -70,12 +72,16 @@
       </div>
     </article>
   </section>
+</section>
+<section class="box full">
   <section class="notes-section">
     <article class="" id="notes">
       <h2>Notas sobre observación de aves</h2>
       <p class="" id="space-notes"></p>
     </article>
   </section>
+</section>
+  
   </main>
 
     <footer class="">
