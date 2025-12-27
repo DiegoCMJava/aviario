@@ -4,97 +4,126 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Diego Armando Castilla Montalvo">
+    <meta name="author" content="Diego Castilla">
     <meta name="keywords" content="Observación, aves, biología, ecoturismo, Cartagena, Colombia">
     <meta name="description" content="Sítio web que permite la busqueda de aves que suelen aparecer en la ciudad de Cartagena-Colobia">
     <title>Aviario Cartagenero</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <!--<link rel="stylesheet" href="styles.css"> -->
     <!--<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css"> por si en algún momento se vuelve a pensar en esta manera de dar estilo--> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="icon" href="./img/icon.png">
+    <style>
+      .suggestion-wrapper {
+        position: relative;
+      }
+      .suggestion-box {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        background-color: #fff;
+        width: 90%;
+        border: 1px solid #ced4da;
+        border-top: none;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        display: none;
+        
+      }
+    </style>
   </head>
-  <body>
-    <header class="" >
-      <h1>Aviario Cartagenero</h1>
-      <div class="">
-        <p>Bienvenidos a este espacio  con el que se pretende  listar a las aves  que habitan y/o transitan por la ciudad de Cartagena de Indias y sus áreas circundantes</p>
-      </div>
+  <body class="container bg-light">
+    <header class="p-5 bg-primary-subtle text-center" >
+      <h1 class="display-1 border">Aviario Cartagenero</h1>  
+        <p class="h2"><strong>Las aves que vuelan por la ciudad</strong></p>
     </header>
-    <main class="">
-      <section class="row">
-      <section class="orders-section">
-        <h2>Lista de órdenes</h2>
-        <ul class="" id="listado-ordenes">
-        </ul>
-      </section>
-      <section class="bird-section">
-    <form for="search-form" action="https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviario-cartagenero/main/aves.json" onsubmit="" class="">
-      <h2>¿Qué ave quieres buscar?</h2>
-      <input type="search" name="search-form" id="input-ave" autocomplete="off" class="" placeholder="Escribe aquí el nombre del ave"/><br>
-      <span><ul class="" id="sugerencias"></ul></span>
-      <input type="submit" value="Buscar" class="" id="sbm-input-ave" ></input>
-    </form>
-    <article class="" >
-      <div class="art-heading">
-      <i class="" id="nombre-comun" title="Nombre común">Nombre común</i>
-      <figure class="" id="contenedor-img-ave">
-        <img
-          src="./img/icon.png"
-          alt="Imagen del ave"
-          class=""
-          id="img-ave"
-        />
-      </figure>
-        <i class="" id="nombre-cientifico" title="Nombre científico">Nombre científico</i>
+    <div class="row mt-5">
+      <main class="col-lg-10"> <!-- col-lg-10-->
+        <section class="container-fluid mb-5">
+          <form for="search-form" action="https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviario-cartagenero/main/aves.json" onsubmit="" class="">
+            <h2>¿Qué ave quieres buscar?</h2>
+            <div class="suggestion-wrapper">
+            <div class="input-group input-group-lg mb-3">
+              <input type="text" name="search-form" id="input-ave" autocomplete="off" class="form-control" placeholder="Escribe aquí el nombre del ave"/><br>
+              <button type="submit" value="Buscar" href="#" class="btn btn-outline-primary" id="sbm-input-ave">Buscar</button>
+            </div>
+            <span class="suggestion-box border-primary-subtle rounded" id="idSuggestionBox"><ul class="" id="idSuggestion"></ul></span> 
+          </div>  
+          </form>
+    <article class="card bg-primary-subtle" >
+      <div class="row g-0">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Grackle_%2851135251724%29.jpg/330px-Grackle_%2851135251724%29.jpg"
+         alt="Imagen del ave"
+         class="col-md-8 img-fluid rounded"
+         id="img-ave"/>
+      <div class="card-body col-md-4 mt-5" id="info-ave">
+        </table>
+      <h5 class="card-subtitle ">Nombre común:</h5>
+       <p class="mb-3"><i id="nombre-comun" title="Nombre común">Maria mulata</i></p>
+       <hr>
+      <h5 class="card-subtitle">Nombre científico:</h5>
+      <p class="mb-3"><i id="nombre-cientifico" title="Nombre científico">Quiscalus mexicanus</i></p>
+      <hr>
+        <h5 class="card-subtitle">Orden:</h5>
+       <p class="mb-3"><i class="" id="orden">paseriforme</i></p> 
+       <hr>
+        <h5 class="card-subtitle">Estado de conservación:</h5>
+        <p class="mb-3"><i class="" id="estado-conserv">preocupación menor</i></p>
+        <hr>   
+        <h5 class="card-subtitle">Sobre esta ave</h5>
+        <p class="card-text fw-semibold" id="descripcion">
+          También conocida como zanate mexicano​, chanate o clarinero,
+           es una especie de ave  de la familia Icteridae que vive en América. Es la más 
+           grande de los zanates, pues mide hasta 43 centímetros (los machos) o hasta 33 centímetros
+          (las hembras).​A veces se le llama informalmente cuervo, pero en realidad no es pariente
+          de los cuervos verdaderos, los cuales pertenecen a la familia Corvidae. El macho es de color negro
+          iridiscente y tiene la cola larga.
+        </p>
       </div>
-      <div class="art-main">
-        <h3>Orden</h3>
-        <i class="" id="orden">
-          Lorem, ipsum dolor sit
-        </i>
-       
-        <h3>Estado de conservación</h3>
-        <i class="" id="estado-conserv">
-            Lorem, ipsum dolor sit
-        </i>
-      
-      </div>
-        
-        <div class="art-footer">
-        
-        <h3>Descripción</h3>
-        <p class="" id="descripcion">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-          fuga harum expedita atque laboriosam minima eligendi deleniti in sed
-          perferendis. Ut hic atque dicta odio error tempore modi alias
-          dignissimos?
-        </p> 
-      </div>
+    </div>
     </article>
-  </section>
+    </section>
 </section>
 <section class="box full">
   <section class="notes-section">
-    <article class="" id="notes">
-      <h2>Notas sobre observación de aves</h2>
-      <p class="" id="space-notes"></p>
+    <article class="card bg-warning-subtle" id="notes">
+      <h2 class="card-title m-3">Notas sobre observación de aves</h2>
+      <section class="card-body">
+      <blockquote class="blockquote" >
+        <p id="space-notes">
+        La silueta completa de un cuerpo, es una buena 
+        herramienta que nos permitirá hacer prácticas para 
+        ir reconociendo sobre todo a las familias, ya que la 
+        mayoría de las especies que integran una familia 
+        guardan muchas similitudes entre sí en cuanto a su 
+        anatomía y a las posiciones que adoptan.
+      </p>
+        <cite class="blockquote-footer">Manual para Principiantes en la Observación de las Aves “Pajareando”</cite>
+      </blockquote>
+    </section>
     </article>
   </section>
-</section>
-  
-  </main>
-
-    <footer class="">
-     <p> Este proyecto es un listado de aves observadas en la ciudad de Cartagena
+</section> 
+      </main>
+      <aside class="mt-3 col-lg-2 bg-primary-subtle rounded">
+        <h3 class="mt-3">Lista de órdenes</h3>
+        <ul class="" id="listado-ordenes">
+        </ul>
+      </aside>
+    </div>
+    <footer class="container-fluid bg-secondary-subtle rounded mt-4">
+       <p> Este proyecto es un listado de aves observadas en la ciudad de Cartagena
       de Indias. Pero no es un trabajo profesional, por ello la información aquí
       mostrada solo debe tenerse como aproximada y sujeta a errores. Es
       recomendable revisar fuentes que cuenten con acreditación académica.
-    </p>
-    <p id="anio" class=""></p>
+      </p>
+      <p id="anio" class=""></p>
     </footer>
   </body>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
- 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </html>

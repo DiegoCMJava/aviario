@@ -4,14 +4,15 @@ const actual = fecha.getFullYear();
 document.getElementById("anio").innerText = "Desde 2025 a " + actual;
 
 const input = document.getElementById("input-ave");
-const sugerencias = document.getElementById("sugerencias");
+const suggestion = document.getElementById("idSuggestion");
+const suggestionBox = document.getElementById("idSuggestionBox");
 
 input.addEventListener("input", () => {
   const busqueda = input.value.toLowerCase();
-  sugerencias.innerHTML = '';
+  suggestion.innerHTML = '';
 
   if (busqueda) {
-   /* fetch('https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviario-cartagenero/main/aves.json') */fetch("aves.json")
+    fetch('https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviario-cartagenero/main/aves.json') /* fetch("aves.json")*/
       .then(res => res.json())
       .then(data => {
         // Crear un array de nombres únicos
@@ -29,13 +30,31 @@ input.addEventListener("input", () => {
           li.style.cursor = "pointer";
           li.addEventListener("click", () => {
             input.value = nombre;
-            sugerencias.innerHTML = '';
+            suggestion.innerHTML = '';
+            suggestionBox.style.display = 'none'
           });
-          sugerencias.appendChild(li);
+          suggestion.appendChild(li);
+         
+          
+          
         });
+        if (coincidencias.length === 0){
+          suggestionBox.style.display = 'none';
+          console.log( "vale cero");
+        } else {
+          suggestionBox.style.display = 'block';
+          console.log( "block");
+        }
       })
-      .catch(err => console.error("Error cargando sugerencias:", err));
+      .catch(err => { console.error("Error cargando sugerencias:", err);
+      suggestionBox.style.display = 'none';
+    });
+      
+  } else { 
+    suggestionBox.style.display = 'none';
   }
+  
+
 });
 
 
@@ -91,57 +110,8 @@ fetch('https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviar
     console.error('Error al procesar los datos de aves:', error);
   });
 
-  // mostrar el mapa
-obtenerUbicacion();
-function obtenerUbicacion() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(mostrarMapa, mostrarError,
-    {
-
-     enableHighAccuracy: true,
-      timeout: 10000,
-      maximumAge: 0
-    }
-    );
-  } else {
-    alert("La geolocalización no es compatible con este navegador.");
-  }
-}
-
-function mostrarMapa(posicion) {
-  var lat =  10.391;//posicion.coords.latitude;
-  var lon = -75.479;//posicion.coords.longitude;
 
 
-  // Crear el mapa
-  var mapa = L.map('espacio-mapa').setView([lat, lon], 13);
-
-  // Cargar los tiles de OpenStreetMap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(mapa);
-
-  // Agregar un marcador
-  L.marker([lat, lon]).addTo(mapa)
-    .bindPopup('¡Cartagena!')
-    .openPopup();
-    L.marker([10.331, -75.414]).addTo(mapa).bindPopup('Turbaco');
-L.marker([10.255, -75.344]).addTo(mapa).bindPopup('Arjona');
-L.marker([10.29, -75.50]).addTo(mapa).bindPopup('Pasacaballos');
-L.marker([10.44, -75.36]).addTo(mapa).bindPopup('Santa Rosa de Lima');
-L.marker([10.56, -75.32]).addTo(mapa).bindPopup('Clemencia');
-L.marker([10.60, -75.28]).addTo(mapa).bindPopup('Santa Catalina');
-L.marker([10.44, -75.27]).addTo(mapa).bindPopup('Villanueva');
-L.marker([10.39, -75.15]).addTo(mapa).bindPopup('San Estanislao');
-L.marker([10.23, -75.19]).addTo(mapa).bindPopup('Mahates');
-L.marker([9.98, -75.29]).addTo(mapa).bindPopup('María la Baja');
-L.marker([10.27, -75.44]).addTo(mapa).bindPopup('Turbaná');
-
-};
-
-function mostrarError(error) {
-  alert("Error al obtener la ubicación: " + error.message);
-};
 
 
 
