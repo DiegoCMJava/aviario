@@ -6,6 +6,7 @@ document.getElementById("anio").innerText = "Desde 2025 a " + actual;
 const input = document.getElementById("input-ave");
 const suggestion = document.getElementById("idSuggestion");
 const suggestionBox = document.getElementById("idSuggestionBox");
+const notes = document.getElementById("notes");
 
 input.addEventListener("input", () => {
   const busqueda = input.value.toLowerCase();
@@ -111,8 +112,25 @@ fetch('https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviar
   });
 
 
-
-
+// captura de notas sobre observación de aves
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('https://corsproxy.io/?https://raw.githubusercontent.com/DiegoCMJava/aviario-cartagenero/main/notes.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar el archivo JSON");
+      }
+      return response.json();
+    })
+    .then(data => {
+      const ramdonNote = data[Math.floor(Math.random() * data.length)];
+      document.getElementById("space-notes").textContent = ramdonNote.note;
+      document.getElementById("source").textContent = ramdonNote.source;
+    })
+    .catch(error => {
+      alert("Error al cargar el archivo JSON")
+      console.error("Error al cargar las notas: ", error);
+    })
+});
 
 
 /* 
